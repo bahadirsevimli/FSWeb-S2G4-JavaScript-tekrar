@@ -91,37 +91,73 @@ console.log(CemberinAlani(15, pi));
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
-  enkucuk,
-  enbuyuk,
+let ucetambolunenler = [],
+  enkucuk = Infinity,
+  enbuyuk = -Infinity,
   ucebolunenlerintoplami,
-  besyuzdenkucuksayilar,
-  siralisayilar,
-  tekraredensayilar;
+  besyuzdenkucuksayilar =[],
+  siralisayilar =[],
+  tekraredensayilar ={};
 
 // 3a çözümü
-
+for(let i = 0 ; i<sayilar.length; i++){
+  if(sayilar[i] > enbuyuk ){
+    enbuyuk = sayilar[i];
+  }
+  else if (sayilar[i] < enkucuk){
+    enkucuk = sayilar[i];
+  }
+}
+console.log(enkucuk);
+console.log(enbuyuk);
+ 
 /* kodlar buraya */
 
 // 3b çözümü:
 
-/* kodlar buraya */
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0){
+    ucetambolunenler.push(sayi);
+  }
+} );
+console.log(ucetambolunenler);
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((a,b) => a+b);
+console.log(ucebolunenlerintoplami);
 
 // 3d çözümü
 
-/* kodlar buraya */
+const kucukMu500 = sayi => sayi <500;
+besyuzdenkucuksayilar = sayilar.filter(kucukMu500);
+console.log(besyuzdenkucuksayilar);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a-b );
+console.log(siralisayilar);
 
 // 3f çözümü
 
-/* kodlar buraya */
+sayilar.forEach( sayi => {
+  if(tekraredensayilar[sayi] ){
+    tekraredensayilar[sayi]++
+  }
+  else {tekraredensayilar[sayi] = 1 
+
+  }
+  return tekraredensayilar;
+}
+
+)
+let sonuc = {};
+for(const sayi in tekraredensayilar){
+  if(tekraredensayilar[sayi] > 1){
+    sonuc[sayi] = tekraredensayilar[sayi];
+  }
+}
+console.log(sonuc);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
